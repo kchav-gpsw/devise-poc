@@ -1,0 +1,496 @@
+Started GET "/" for 127.0.0.1 at 2024-03-18 11:02:16 -0700
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/kchav/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/railties-7.1.3.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/kchav/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/railties-7.1.3.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.5ms | Allocations: 375)
+Completed 200 OK in 13ms (Views: 3.8ms | ActiveRecord: 0.0ms | Allocations: 7901)
+
+
+Started GET "/" for ::1 at 2024-03-18 11:31:55 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 94)
+  Rendered layout layouts/application.html.erb (Duration: 115.4ms | Allocations: 90880)
+Completed 200 OK in 117ms (Views: 116.9ms | ActiveRecord: 0.0ms | Allocations: 91859)
+
+
+Started GET "/" for ::1 at 2024-03-18 11:33:06 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 99)
+  Rendered layout layouts/application.html.erb (Duration: 11.6ms | Allocations: 17156)
+Completed 200 OK in 13ms (Views: 12.5ms | ActiveRecord: 0.0ms | Allocations: 18054)
+
+
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2024-03-18 20:48:55.433761', '2024-03-18 20:48:55.433762') RETURNING "key"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DeviseCreateUsers (20240318204048)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime(6), "remember_created_at" datetime(6), "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240318204048') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2024-03-18 13:49:21 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 183)
+  Rendered layout layouts/application.html.erb (Duration: 22.6ms | Allocations: 33120)
+Completed 200 OK in 30ms (Views: 28.9ms | ActiveRecord: 0.0ms | Allocations: 38289)
+
+
+Started GET "/" for 127.0.0.1 at 2024-03-18 13:49:30 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 15.6ms | Allocations: 2311)
+Completed 200 OK in 17ms (Views: 16.3ms | ActiveRecord: 0.0ms | Allocations: 2556)
+
+
+Started GET "/users/sign_up" for ::1 at 2024-03-18 13:49:44 -0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /Users/kchav/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/devise-4.9.3/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /Users/kchav/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/devise-4.9.3/app/views/devise/shared/_error_messages.html.erb (Duration: 0.3ms | Allocations: 231)
+  Rendered /Users/kchav/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/devise-4.9.3/app/views/devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 533)
+  Rendered /Users/kchav/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/devise-4.9.3/app/views/devise/registrations/new.html.erb within layouts/application (Duration: 8.8ms | Allocations: 4159)
+  Rendered layout layouts/application.html.erb (Duration: 9.6ms | Allocations: 5332)
+Completed 200 OK in 28ms (Views: 11.2ms | ActiveRecord: 2.4ms | Allocations: 19863)
+
+
+Started GET "/users/sign_in" for ::1 at 2024-03-18 13:50:12 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /Users/kchav/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/devise-4.9.3/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/kchav/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/devise-4.9.3/app/views/devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 134)
+  Rendered /Users/kchav/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/devise-4.9.3/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 5.3ms | Allocations: 1704)
+  Rendered layout layouts/application.html.erb (Duration: 6.7ms | Allocations: 2804)
+Completed 200 OK in 13ms (Views: 8.2ms | ActiveRecord: 0.0ms | Allocations: 4278)
+
+
+Started POST "/users" for ::1 at 2024-03-18 13:50:12 -0700
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"kchav@gopro.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "kchav@gopro.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  Rendering layout layouts/application.html.erb
+  Rendering /Users/kchav/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/devise-4.9.3/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /Users/kchav/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/devise-4.9.3/app/views/devise/shared/_error_messages.html.erb (Duration: 0.2ms | Allocations: 496)
+  Rendered /Users/kchav/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/devise-4.9.3/app/views/devise/shared/_links.html.erb (Duration: 0.0ms | Allocations: 70)
+  Rendered /Users/kchav/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/devise-4.9.3/app/views/devise/registrations/new.html.erb within layouts/application (Duration: 0.9ms | Allocations: 1840)
+  Rendered layout layouts/application.html.erb (Duration: 1.6ms | Allocations: 2937)
+Completed 422 Unprocessable Entity in 581ms (Views: 1.7ms | ActiveRecord: 0.6ms | Allocations: 15628)
+
+
+Started POST "/users" for ::1 at 2024-03-18 13:50:22 -0700
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"kchav@gopro.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "kchav@gopro.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  Rendering layout layouts/application.html.erb
+  Rendering /Users/kchav/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/devise-4.9.3/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /Users/kchav/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/devise-4.9.3/app/views/devise/shared/_error_messages.html.erb (Duration: 0.2ms | Allocations: 366)
+  Rendered /Users/kchav/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/devise-4.9.3/app/views/devise/shared/_links.html.erb (Duration: 0.1ms | Allocations: 70)
+  Rendered /Users/kchav/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/devise-4.9.3/app/views/devise/registrations/new.html.erb within layouts/application (Duration: 1.0ms | Allocations: 1697)
+  Rendered layout layouts/application.html.erb (Duration: 1.9ms | Allocations: 2794)
+Completed 422 Unprocessable Entity in 242ms (Views: 2.1ms | ActiveRecord: 0.9ms | Allocations: 7918)
+
+
+Started POST "/users" for ::1 at 2024-03-18 13:50:35 -0700
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"kchav@gopro.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "kchav@gopro.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (1.7ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "kchav@gopro.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2024-03-18 20:50:35.515634"], ["updated_at", "2024-03-18 20:50:35.515634"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 303 See Other in 242ms (ActiveRecord: 2.9ms | Allocations: 7267)
+
+
+Started GET "/" for ::1 at 2024-03-18 13:50:35 -0700
+Processing by HomeController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 0.7ms | Allocations: 1354)
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.0ms | Allocations: 1644)
+
+
+Started GET "/" for ::1 at 2024-03-18 13:52:16 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 98)
+  Rendered layout layouts/application.html.erb (Duration: 6.9ms | Allocations: 14714)
+Completed 200 OK in 8ms (Views: 8.0ms | ActiveRecord: 0.0ms | Allocations: 15629)
+
+
+Started GET "/" for ::1 at 2024-03-18 13:52:18 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 3.0ms | Allocations: 1351)
+Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 0.0ms | Allocations: 1590)
+
+
+Started GET "/" for ::1 at 2024-03-18 13:52:18 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 2.7ms | Allocations: 1330)
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.0ms | Allocations: 1569)
+
+
+Started GET "/" for ::1 at 2024-03-18 13:52:19 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 2.7ms | Allocations: 1345)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.0ms | Allocations: 1584)
+
+
+Started GET "/" for ::1 at 2024-03-18 13:52:19 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 2.1ms | Allocations: 1324)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.0ms | Allocations: 1563)
+
+
+Started GET "/users/sign_up" for ::1 at 2024-03-18 13:52:19 -0700
+Processing by Devise::RegistrationsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 13ms (ActiveRecord: 3.8ms | Allocations: 6131)
+
+
+Started GET "/" for ::1 at 2024-03-18 13:52:19 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 1.8ms | Allocations: 1375)
+Completed 200 OK in 2ms (Views: 2.1ms | ActiveRecord: 0.0ms | Allocations: 1616)
+
+
+Started GET "/" for ::1 at 2024-03-18 13:52:21 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 2.9ms | Allocations: 1351)
+Completed 200 OK in 5ms (Views: 3.6ms | ActiveRecord: 0.0ms | Allocations: 1590)
+
+
+Started GET "/users/sign_in" for ::1 at 2024-03-18 13:52:33 -0700
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms | Allocations: 1717)
+
+
+Started GET "/" for ::1 at 2024-03-18 13:52:33 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 1.8ms | Allocations: 1365)
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.0ms | Allocations: 1604)
+
+
+Started GET "/" for ::1 at 2024-03-18 13:57:22 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:2
+  Rendered home/index.html.erb within layouts/application (Duration: 4.4ms | Allocations: 5386)
+  Rendered layout layouts/application.html.erb (Duration: 12.8ms | Allocations: 19730)
+Completed 200 OK in 15ms (Views: 13.1ms | ActiveRecord: 1.3ms | Allocations: 20646)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2024-03-18 13:57:23 -0700
+Processing by Devise::SessionsController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 303 See Other in 10ms (ActiveRecord: 0.2ms | Allocations: 2778)
+
+
+Started GET "/" for ::1 at 2024-03-18 13:57:23 -0700
+Processing by HomeController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 438)
+  Rendered layout layouts/application.html.erb (Duration: 3.3ms | Allocations: 1556)
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.0ms | Allocations: 1843)
+
+
+Started POST "/users/sign_in" for ::1 at 2024-03-18 13:57:24 -0700
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.0ms | Allocations: 422)
+
+
+Processing by Devise::SessionsController#new as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  Rendering layout layouts/application.html.erb
+  Rendering /Users/kchav/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/devise-4.9.3/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/kchav/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/devise-4.9.3/app/views/devise/shared/_links.html.erb (Duration: 0.9ms | Allocations: 556)
+  Rendered /Users/kchav/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/devise-4.9.3/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 4.2ms | Allocations: 1772)
+  Rendered layout layouts/application.html.erb (Duration: 5.9ms | Allocations: 2933)
+Completed 200 OK in 12ms (Views: 10.4ms | ActiveRecord: 0.0ms | Allocations: 4026)
+
+
+Started GET "/users/password/new" for ::1 at 2024-03-18 13:57:26 -0700
+Processing by Devise::PasswordsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /Users/kchav/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/devise-4.9.3/app/views/devise/passwords/new.html.erb within layouts/application
+  Rendered /Users/kchav/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/devise-4.9.3/app/views/devise/shared/_error_messages.html.erb (Duration: 0.4ms | Allocations: 212)
+  Rendered /Users/kchav/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/devise-4.9.3/app/views/devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 124)
+  Rendered /Users/kchav/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/devise-4.9.3/app/views/devise/passwords/new.html.erb within layouts/application (Duration: 3.4ms | Allocations: 1149)
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | Allocations: 2253)
+Completed 200 OK in 10ms (Views: 7.1ms | ActiveRecord: 0.0ms | Allocations: 3148)
+
+
+Started GET "/users/password/new" for ::1 at 2024-03-18 13:57:26 -0700
+Processing by Devise::PasswordsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /Users/kchav/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/devise-4.9.3/app/views/devise/passwords/new.html.erb within layouts/application
+  Rendered /Users/kchav/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/devise-4.9.3/app/views/devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 13)
+  Rendered /Users/kchav/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/devise-4.9.3/app/views/devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 112)
+  Rendered /Users/kchav/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/devise-4.9.3/app/views/devise/passwords/new.html.erb within layouts/application (Duration: 2.6ms | Allocations: 594)
+  Rendered layout layouts/application.html.erb (Duration: 5.9ms | Allocations: 1695)
+Completed 200 OK in 9ms (Views: 6.8ms | ActiveRecord: 0.0ms | Allocations: 2266)
+
+
+Started POST "/users/sign_in" for ::1 at 2024-03-18 13:57:36 -0700
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"kchav@gopro.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "kchav@gopro.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 303 See Other in 223ms (ActiveRecord: 0.2ms | Allocations: 3019)
+
+
+Started GET "/" for ::1 at 2024-03-18 13:57:36 -0700
+Processing by HomeController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:2
+  Rendered home/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 963)
+  Rendered layout layouts/application.html.erb (Duration: 1.6ms | Allocations: 2081)
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.1ms | Allocations: 2326)
+
+
+Started GET "/" for ::1 at 2024-03-18 14:03:12 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 1228)
+  Rendered layout layouts/application.html.erb (Duration: 0.4ms | Allocations: 1328)
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 2265)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check 
+<% if user_signed_in? %>
+  <div> Welcome <%= current_user.email,  current_user.first_name, current_user.last_name %> </div>
+  <%= button_to "Sign out", destroy_user_session_path, method: :delete %>
+<% else %>
+  <%= button_to "Sign in", new_user_session_path %>
+<% end %>
+<h1>Hello GoPro Inc!</h1>
+<h2>Welcome Kimtey!!!</h2>
+):
+1:    
+2:    <% if user_signed_in? %>
+3:      <div> Welcome <%= current_user.email,  current_user.first_name, current_user.last_name %> </div>
+4:      <%= button_to "Sign out", destroy_user_session_path, method: :delete %>
+5:    <% else %>
+6:      <%= button_to "Sign in", new_user_session_path %>
+7:    <% end %>
+8:    <h1>Hello GoPro Inc!</h1>
+9:    <h2>Welcome Kimtey!!!</h2>
+  
+app/views/home/index.html.erb:3: syntax error, unexpected ')', expecting '='
+app/controllers/home_controller.rb:3:in `index'
+Started GET "/" for ::1 at 2024-03-18 14:03:39 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 1188)
+  Rendered layout layouts/application.html.erb (Duration: 0.4ms | Allocations: 1288)
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 2204)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check 
+<% if user_signed_in? %>
+  <div> Welcome <%= current_user.email,  current_user.name %> </div>
+  <%= button_to "Sign out", destroy_user_session_path, method: :delete %>
+<% else %>
+  <%= button_to "Sign in", new_user_session_path %>
+<% end %>
+<h1>Hello GoPro Inc!</h1>
+<h2>Welcome Kimtey!!!</h2>
+):
+1:    
+2:    <% if user_signed_in? %>
+3:      <div> Welcome <%= current_user.email,  current_user.name %> </div>
+4:      <%= button_to "Sign out", destroy_user_session_path, method: :delete %>
+5:    <% else %>
+6:      <%= button_to "Sign in", new_user_session_path %>
+7:    <% end %>
+8:    <h1>Hello GoPro Inc!</h1>
+9:    <h2>Welcome Kimtey!!!</h2>
+  
+app/views/home/index.html.erb:3: syntax error, unexpected ')', expecting '='
+app/controllers/home_controller.rb:3:in `index'
+Started GET "/" for ::1 at 2024-03-18 14:03:41 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 1234)
+  Rendered layout layouts/application.html.erb (Duration: 1.9ms | Allocations: 1333)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 1580)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check 
+<% if user_signed_in? %>
+  <div> Welcome <%= current_user.email,  current_user.name %> </div>
+  <%= button_to "Sign out", destroy_user_session_path, method: :delete %>
+<% else %>
+  <%= button_to "Sign in", new_user_session_path %>
+<% end %>
+<h1>Hello GoPro Inc!</h1>
+<h2>Welcome Kimtey!!!</h2>
+):
+1:    
+2:    <% if user_signed_in? %>
+3:      <div> Welcome <%= current_user.email,  current_user.name %> </div>
+4:      <%= button_to "Sign out", destroy_user_session_path, method: :delete %>
+5:    <% else %>
+6:      <%= button_to "Sign in", new_user_session_path %>
+7:    <% end %>
+8:    <h1>Hello GoPro Inc!</h1>
+9:    <h2>Welcome Kimtey!!!</h2>
+  
+app/views/home/index.html.erb:3: syntax error, unexpected ')', expecting '='
+app/controllers/home_controller.rb:3:in `index'
+Started GET "/" for ::1 at 2024-03-18 14:03:52 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 1187)
+  Rendered layout layouts/application.html.erb (Duration: 0.3ms | Allocations: 1287)
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 2203)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check 
+<% if user_signed_in? %>
+  <div> Welcome <%= current_user.email,  current_user.encrypted_password %> </div>
+  <%= button_to "Sign out", destroy_user_session_path, method: :delete %>
+<% else %>
+  <%= button_to "Sign in", new_user_session_path %>
+<% end %>
+<h1>Hello GoPro Inc!</h1>
+<h2>Welcome Kimtey!!!</h2>
+):
+1:    
+2:    <% if user_signed_in? %>
+3:      <div> Welcome <%= current_user.email,  current_user.encrypted_password %> </div>
+4:      <%= button_to "Sign out", destroy_user_session_path, method: :delete %>
+5:    <% else %>
+6:      <%= button_to "Sign in", new_user_session_path %>
+7:    <% end %>
+8:    <h1>Hello GoPro Inc!</h1>
+9:    <h2>Welcome Kimtey!!!</h2>
+  
+app/views/home/index.html.erb:3: syntax error, unexpected ')', expecting '='
+app/controllers/home_controller.rb:3:in `index'
+Started GET "/" for ::1 at 2024-03-18 14:04:04 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:2
+  Rendered home/index.html.erb within layouts/application (Duration: 3.5ms | Allocations: 5394)
+  Rendered layout layouts/application.html.erb (Duration: 14.3ms | Allocations: 19810)
+Completed 200 OK in 15ms (Views: 14.1ms | ActiveRecord: 1.1ms | Allocations: 20723)
+
+
+Started GET "/" for ::1 at 2024-03-18 14:04:24 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:2
+  Rendered home/index.html.erb within layouts/application (Duration: 3.6ms | Allocations: 5366)
+  Rendered layout layouts/application.html.erb (Duration: 23.1ms | Allocations: 19613)
+Completed 200 OK in 24ms (Views: 22.9ms | ActiveRecord: 1.1ms | Allocations: 20528)
+
+
+Started GET "/" for ::1 at 2024-03-18 14:04:25 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:2
+  Rendered home/index.html.erb within layouts/application (Duration: 7.6ms | Allocations: 976)
+  Rendered layout layouts/application.html.erb (Duration: 14.8ms | Allocations: 2093)
+Completed 200 OK in 20ms (Views: 19.4ms | ActiveRecord: 0.1ms | Allocations: 2332)
+
+
+Started GET "/" for ::1 at 2024-03-18 14:04:36 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:2
+  Rendered home/index.html.erb within layouts/application (Duration: 3.3ms | Allocations: 6342)
+  Rendered layout layouts/application.html.erb (Duration: 3.4ms | Allocations: 6434)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 1.0ms | Allocations: 7329)
+
+
+  
+ActionView::Template::Error (undefined method `last_name' for #<User id: 1, email: "kchav@gopro.com", created_at: "2024-03-18 20:50:35.515634000 +0000", updated_at: "2024-03-18 20:50:35.515634000 +0000">):
+    1: 
+    2: <% if user_signed_in? %>
+    3:   <div> Welcome <%=current_user.last_name %> </div>
+    4:   <%= button_to "Sign out", destroy_user_session_path, method: :delete %>
+    5: <% else %>
+    6:   <%= button_to "Sign in", new_user_session_path %>
+  
+app/views/home/index.html.erb:3
+app/controllers/home_controller.rb:3:in `index'
+Started GET "/" for ::1 at 2024-03-18 14:05:26 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:2
+  Rendered home/index.html.erb within layouts/application (Duration: 3.2ms | Allocations: 5402)
+  Rendered layout layouts/application.html.erb (Duration: 37.1ms | Allocations: 19774)
+Completed 200 OK in 38ms (Views: 37.1ms | ActiveRecord: 1.0ms | Allocations: 20688)
+
+
