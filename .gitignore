@@ -18,6 +18,8 @@
 
 ## Specific to RubyMotion:
 .dat*
+.idea
+.idea/*
 .repl_history
 build/
 *.bridgesupport
